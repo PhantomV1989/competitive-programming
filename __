@@ -1,0 +1,114 @@
+**If found illogical bugs, recompile the code**
+**always describe all extreme edge cases fully**
+**always design algo on paper down to the most extreme edge case**
+WALK THROUGH THE CODE AT LEAST ONCE
+find only works if vector size !=0,!= uv.end() means can find
+(find(uv.begin(), uv.end(), tuv) == uv.end() || uv.size() == 0)uv.push_back(tuv);           
+std::find(vector.begin(), vector.end(), item) != vector.end()
+please use long long whenever possible if no. is fucking big
+expect noisy data even though sample is clean WTF
+leave nothing to chances
+/////vector/////
+std::find(vector.begin(), vector.end(), item) != vector.end()
+count(grp_r.begin(), grp_r.end(), i);
+sort
+////////////////
+#include <cstdio>
+#include <math.h>
+#include <vector>
+using namespace std;
+
+int main()
+{
+    int t, nn;
+    scanf("%d", &t);
+    while (t--)
+    {
+        scanf("%i", &nn);
+        int a=5;
+    }
+}
+//////////////////////////////////////////////////////////////////////////////////////
+#include <cstdio>
+#include <iostream>
+using namespace std;
+
+static const auto speedup = [](){
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    return nullptr;
+}();
+
+int main()
+{
+    int t;
+    cin>>t;
+    while(t--)
+    {
+        long long l,r;
+        cin>>l>>r;
+        //your code
+        cout<<" "<<endl;
+    }
+return 0;
+}
+
+//////////////////////////////////////////////////////////////////////////////////////
+int primeGenerator()
+{
+
+    long long res, nn;
+    int primes2[3404] = {2}, m, n, np = 1;
+    bool br, prime[31624] = {false, false, true}; // 2 is prime
+
+    for (n = 3; n < 31624; n += 2)
+        prime[n] = true; // odd maybe prime
+    for (n = 3; n < 178; n += 2)
+        if (prime[n])
+            for (m = n * n; m < 31624; m += (n + n))
+                prime[m] = false;
+    for (n = 3; n < 31624; n += 2)
+        if (prime[n])
+            primes2[np++] = n * n;
+}
+////////////////////////////////////////////////////////////////////////////////
+vector<long> grouplinks(vector<vector<long>> uv, int n)
+{ //treat each vertice as a group with its neighbours instead of by itself
+    vector<long> grp(n + 1);
+    int gc = 1;
+    for (int i = 0; i < n + 1; i++)
+        grp[i] = 0;
+
+    for (int j = 0; j < uv.size(); j++)
+    {
+        long u = uv[j][0];
+        long v = uv[j][1];
+        if (grp[u] == 0)
+            grp[u] = gc;
+        if (grp[v] == 0)
+            grp[v] = gc;
+        if (grp[u] != 0 && grp[u] < gc)
+        {
+            int lr = grp[v];
+            for (int ii = 0; ii < grp.size(); ii++)
+                if (grp[ii] == lr)
+                    grp[ii] = grp[u];
+        }
+
+        else if (grp[v] != 0 && grp[v] < gc)
+        {
+            int lr = grp[u];
+            for (int ii = 0; ii < grp.size(); ii++)
+                if (grp[ii] == lr)
+                    grp[ii] = grp[v];
+        }
+        gc++;
+    }
+    return grp;
+}
+//////////////////////////////
+2d grid search
+//////////////////
+modulo is remainder
+////
+13&1 is 1 odd number
